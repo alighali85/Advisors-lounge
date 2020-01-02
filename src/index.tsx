@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import {getData} from './helpers/mockedData'
+import AppNavbar from './containers/appNavbar'
 
 class App extends React.Component {
     state = {
