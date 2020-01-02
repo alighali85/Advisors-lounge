@@ -1,34 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
-import {getData} from './helpers/mockedData'
+import { getData } from './helpers/mockedData'
 import AppNavbar from './containers/appNavbar'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends React.Component {
-    state = {
-        advisors : [
-            {
-                name: '',
-                lastName: '',
-                email: '',
-                telephone: ''
-            }
-        ]
-    }
+  state = {
+    advisors: [
+      {
+        name: '',
+        lastName: '',
+        email: '',
+        telephone: ''
+      }
+    ]
+  }
 
-    componentDidMount() {
-        getData().then(data => {
-            this.setState({advisors: data})
-        })
-    }
+  componentDidMount() {
+    getData().then(data => {
+      this.setState({ advisors: data })
+    })
+  }
 
-    render() {
+  render() {
     return (
-    <div>
-        { !!this.state.advisors && this.state.advisors.map((item,i) => <li key={i}>{i} {item.name}</li>)}
-        </div>)
-    }
+      <div>
+        <AppNavbar />
+        {!!this.state.advisors && this.state.advisors.map((item, i) => <li key={i}>{i} {item.name}</li>)}
+      </div>)
+  }
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
