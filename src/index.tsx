@@ -1,10 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
+import {getData} from './helpers/mockedData'
 
 class App extends React.Component {
+    state = {
+        advisors : [
+            {
+                name: '',
+                lastName: '',
+                email: '',
+                telephone: ''
+            }
+        ]
+    }
+
+    componentDidMount() {
+        getData().then(data => {
+            this.setState({advisors: data})
+        })
+    }
+
     render() {
-        return (<div>Adviqo app</div>)
+    return (
+    <div>
+        { !!this.state.advisors && this.state.advisors.map((item,i) => <li key={i}>{i} {item.name}</li>)}
+        </div>)
     }
 }
 
