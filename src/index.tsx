@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import {getData} from './helpers/mockedData'
 import AppNavbar from './containers/appNavbar'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends React.Component {
     state = {
