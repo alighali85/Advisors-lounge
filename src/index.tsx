@@ -8,6 +8,7 @@ import Row from 'react-bootstrap/Row'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Advisor from './containers/advisor'
 import './index.scss'
+import RatingList from './containers/RatingList'
 
 interface AppProps {
   state?: any
@@ -101,6 +102,19 @@ class App extends React.Component<AppProps, AppState> {
     })
   }
 
+  handleFilter = (e?: any) => {
+    if (e === 'reset') {
+      this.loadAdvisors()
+      return
+    }
+    const results = this.state.allAdvisors.filter(advisor => (
+      advisor.rating === e)
+    )
+    this.setState({
+      advisorsList: results
+    })
+  }
+
   render() {
     return (
       <div className="app">
@@ -108,7 +122,7 @@ class App extends React.Component<AppProps, AppState> {
         <Container fluid>
           <Row className="show-grid">
             <Col sm={2} >
-              filter
+              <RatingList onSelect={this.handleFilter} reset={() => this.handleFilter('reset')} />
             </Col>
             <Col lg={10} >
               <div className="advisors-cards">
