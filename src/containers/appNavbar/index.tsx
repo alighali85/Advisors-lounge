@@ -3,9 +3,13 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
-import Button from 'react-bootstrap/Button'
 
-export default class AppNavbar extends React.Component {
+
+interface AppNavbarProps {
+	onSearch?: any
+}
+
+export default class AppNavbar extends React.Component<AppNavbarProps> {
 	render() {
 		return <>
 			<div className="app-navbar">
@@ -16,8 +20,7 @@ export default class AppNavbar extends React.Component {
 						<Nav className="mr-auto">
 						</Nav>
 						<Form inline>
-							<FormControl type="text" placeholder="Search" className="mr-sm-2" />
-							<Button variant="outline-success">Search</Button>
+							<FormControl type="text" placeholder="Search" className="mr-sm-2" onChange={this.props.onSearch} />
 						</Form>
 					</Navbar.Collapse>
 				</Navbar>
