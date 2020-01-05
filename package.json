@@ -21,11 +21,12 @@
     "typescript": "^3.7.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": " node ./server/index.js & react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:3002/",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -42,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "express": "^4.17.1",
     "faker": "^4.1.0"
   }
 }

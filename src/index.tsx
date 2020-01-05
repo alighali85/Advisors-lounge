@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import * as serviceWorker from './serviceWorker'
-import { getData } from './helpers/mockedData'
 import AppNavbar from './containers/appNavbar'
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
@@ -62,7 +61,11 @@ class App extends React.Component<AppProps, AppState> {
       observer.observe(loadingButton)
     })
 
-    getData().then(data => {
+    this.loadAdvisors()
+  }
+
+  loadAdvisors = () => {
+    fetch('/advisors').then(data => data.json()).then(data => {
       this.setState({
         allAdvisors: data,
         advisorsList: data.slice(0, 20)
