@@ -20,7 +20,6 @@ export default class Advisor extends React.Component<AdvisorProps> {
         return <>
             <div>
                 <Card style={{ width: '18rem' }}>
-                    {/* <Card.Img variant="top" src={this.props.image} /> */}
                     <Card.Body>
                         <Card.Title>{this.props.name}</Card.Title>
                         <Card.Text>

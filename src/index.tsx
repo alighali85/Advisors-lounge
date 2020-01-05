@@ -113,7 +113,6 @@ class App extends React.Component<AppProps, AppState> {
                   <Advisor
                     id={item.id}
                     name={item.name}
-                    image={item.image}
                     bio={item.bio}
                     title={item.title}
                     rating={item.rating}
