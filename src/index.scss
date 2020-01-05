@@ -1,0 +1,13 @@
+.app {
+    .advisors-cards {
+        max-height: 100vh;
+        overflow: scroll;
+        display: flex;
+        flex-wrap: wrap;
+        justify-items: center;
+        justify-content: center;
+    }
+    .container {
+        margin: 0px;
+    }
+}
