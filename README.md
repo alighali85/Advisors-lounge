@@ -5,7 +5,7 @@
 
 Hi there,
 
-as a code challenge I created this app, it is a simple advisors platform, helps users to filter and find the suitable advisor by its name, or rating.
+advisors Loungs is a simple advisors platform built with React and TypeScript, helps users to filter and find the suitable advisor by its name, or rating.
 
 once you open the app, you see a list of all the advisors, as a grided cards.
 
